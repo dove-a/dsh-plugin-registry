@@ -689,3 +689,21 @@ test('formatAllowlistText：格式化为可读白名单文件内容', () => {
   assert.equal(formatAllowlistText(null), '（白名单为空）')
   assert.equal(formatAllowlistText({}), '（白名单为空）')
 })
+
+// ——— 全屏面板互斥契约（源码级回归） ———
+// dsh-ssh / dsh-client-ui-task-board 使用 html[data-dsh-*-active] 属性 + CSS
+// display:none!important 隐藏主区；本插件必须加入同一互斥协议：
+//  (1) 打开时清空 ssh/taskboard 激活属性（closeForeignPanels + OTHER_ACTIVE_ATTRS）
+//  (2) CSS 显示条件同时排除 ssh 与 taskboard（:not 链）
+//  (3) 对方激活时自身让位（属性 MutationObserver 兜底 + dsh-panel-activate 事件）
+test('面板互斥：与 dsh-ssh / task-board 的激活协议完整互斥', () => {
+  const src = require('node:fs').readFileSync(path.join(__dirname, '..', 'lib', 'client.js'), 'utf8')
+  // 1) 打开时移除对方激活属性
+  assert.match(src, /data-dsh-taskboard-active.*data-dsh-ssh-active/s, 'OTHER_ACTIVE_ATTRS 应同时含 taskboard 与 ssh')
+  assert.match(src, /closeForeignPanels\(\)/, '打开时应先调用 closeForeignPanels 关闭对方面板')
+  // 2) CSS 互斥：registry 面板显示/隐藏条件均排除 ssh 激活
+  assert.ok(src.includes(':not([data-dsh-taskboard-active]):not([data-dsh-ssh-active])'), 'CSS 应链式排除 taskboard 与 ssh 激活')
+  // 3) 对方激活 → 自身让位
+  assert.match(src, /foreignAttrObserver/, '应存在对方激活属性的 MutationObserver 兜底')
+  assert.match(src, /event\.detail === ['"]taskboard['"] \|\| event\.detail === ['"]ssh['"]/, 'activate 事件应同时响应 taskboard 与 ssh')
+})
