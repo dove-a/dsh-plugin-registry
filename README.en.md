@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/@a_dove/dsh-plugin-registry)](https://www.npmjs.com/package/@a_dove/dsh-plugin-registry)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-**Path registry for DSH (DeepSeek Harness) plugins**: inventories every installed plugin, preset and skill with its real path and origin — automatically detects newly installed, removed and upgraded entries, scans for C-drive residue references inside plugin files, and verifies dependency integrity. Available both as **agent tools** and a **Web GUI panel**.
+**Path registry for DSH (DeepSeek Harness) plugins**: an idea born from its author's own DSH living on the **D drive** (and the many limits that came with relocating it) — it inventories every installed plugin, preset and skill with its real path and origin, automatically detects newly installed, removed and upgraded entries, scans for C-drive residue references inside plugin files, and verifies dependency integrity. Available both as **agent tools** and a **Web GUI panel**.
 
 ---
 
@@ -24,6 +24,7 @@
 **Suitable for:**
 
 - **DSH Web GUI users** who installed several plugins and want to know which directory/carrier/version a plugin lives in;
+- **D-drive relocators** who moved both DSH and the local `_npx` cache to the D drive — the original motivation for this project;
 - **Plugin authors** verifying install location, dependencies and path residue after shipping a plugin;
 - **Auditing environments** tracking plugin change history (what was installed when, which upgrade changed a version).
 
