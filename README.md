@@ -3,6 +3,8 @@
 [![npm version](https://img.shields.io/npm/v/@a_dove/dsh-plugin-registry)](https://www.npmjs.com/package/@a_dove/dsh-plugin-registry)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
+> **语言 / Language：** [中文](README.md) · [English](README.en.md)
+
 DSH（DeepSeek Harness）**插件路径注册表**：盘点 DSH 环境中所有已安装插件、预设与技能的真实路径与来源，自动发现新安装、被删除与版本变化，扫描插件文件中的 C 盘残留引用，并检查依赖完整性。提供 **Agent 自动工具**与 **Web GUI 面板**双入口。
 
 ---
