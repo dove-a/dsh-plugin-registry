@@ -1,5 +1,5 @@
 'use strict'
-// @dove-a/dsh-plugin-registry — CLI 入口（宿主子进程调用，stdout 输出 JSON）
+// @a_dove/dsh-plugin-registry — CLI 入口（宿主子进程调用，stdout 输出 JSON）
 // 用法:
 //   registry-cli.js scan [--mode quick|all] [--dsh-home <path>]
 //   registry-cli.js list [--dsh-home <path>]

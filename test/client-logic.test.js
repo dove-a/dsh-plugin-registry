@@ -637,22 +637,22 @@ test('isSearchActive：空白/空串视为未激活，输入即激活', () => {
   assert.equal(isSearchActive(''), false)
   assert.equal(isSearchActive('   '), false)
   assert.equal(isSearchActive('es'), true)
-  assert.equal(isSearchActive(' @dove-a/ '), true)
+  assert.equal(isSearchActive(' @a_dove/ '), true)
 })
 
-// ——— 载体归属归类：无 @scope/ 前缀但 carrier 属 scope 载体（如 @dove-a/*）→ 归入该 scope 组 ———
+// ——— 载体归属归类：无 @scope/ 前缀但 carrier 属 scope 载体（如 @a_dove/*）→ 归入该 scope 组 ———
 
 test('buildGroupTree：无前缀但 carrier 属 scope 载体 → 归入该 scope 组', () => {
   const entries = [
-    { name: '@dove-a/dsh-plugin-registry', carrier: '@dove-a/*' },
-    { name: 'dsh-chat-window-fold', carrier: '@dove-a/*' },
+    { name: '@a_dove/dsh-plugin-registry', carrier: '@a_dove/*' },
+    { name: 'dsh-chat-window-fold', carrier: '@a_dove/*' },
     { name: 'solo-other', carrier: 'node_modules' }
   ]
   const groups = buildGroupTree(entries)
-  const dove = groups.find((g) => g.key === 'scope:@dove-a/')
-  assert.ok(dove, '@dove-a/ 组应存在')
+  const dove = groups.find((g) => g.key === 'scope:@a_dove/')
+  assert.ok(dove, '@a_dove/ 组应存在')
   const names = dove.entries.map((e) => e.name).sort()
-  assert.deepEqual(names, ['@dove-a/dsh-plugin-registry', 'dsh-chat-window-fold'])
+  assert.deepEqual(names, ['@a_dove/dsh-plugin-registry', 'dsh-chat-window-fold'])
   // 不产生 name 组（count=1）也不进未分类
   assert.equal(groups.some((g) => g.key === 'name:dsh-chat-window-fold'), false)
   const un = groups.find((g) => g.key === 'unclassified')

@@ -1,5 +1,5 @@
 {
-  "name": "@dove-a/dsh-plugin-registry",
+  "name": "@a_dove/dsh-plugin-registry",
   "version": "1.0.0",
   "description": "DSH 插件路径注册表：盘点所有安装插件的路径位置，自动检查新装/删除/版本变化与 C 盘残留引用，提供 Agent 三件套工具（plugin_registry_list/check/report）与 GUI 面板（插件路径管理）。Hot-pluggable — mounted via profiles cordis.patch.yml + profile node_modules, no dsh source changes.",
   "type": "commonjs",

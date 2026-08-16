@@ -1,5 +1,5 @@
 'use strict'
-// RED-phase tests for @dove-a/dsh-plugin-registry core (node:test)
+// RED-phase tests for @a_dove/dsh-plugin-registry core (node:test)
 // Contract: registry-cli 独立模块 + CLI；四种载体；quick/all 双模式；
 // 四项检查；报告保留 10 份；升级备份仅保留 1 份。
 const { test } = require('node:test')
