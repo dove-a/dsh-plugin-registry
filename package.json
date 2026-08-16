@@ -1,0 +1,62 @@
+{
+  "name": "@dove-a/dsh-plugin-registry",
+  "version": "1.0.0",
+  "description": "DSH 插件路径注册表：盘点所有安装插件的路径位置，自动检查新装/删除/版本变化与 C 盘残留引用，提供 Agent 三件套工具（plugin_registry_list/check/report）与 GUI 面板（插件路径管理）。Hot-pluggable — mounted via profiles cordis.patch.yml + profile node_modules, no dsh source changes.",
+  "type": "commonjs",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "main": "lib/host/index.mjs",
+  "exports": {
+    ".": {
+      "default": "./lib/host/index.mjs"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web"
+    }
+  },
+  "bin": {
+    "registry-cli": "bin/registry-cli.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "prepublishOnly": "npm test"
+  },
+  "files": [
+    "lib/**/*.js",
+    "lib/**/*.mjs",
+    "bin/**"
+  ],
+  "keywords": [
+    "dsh",
+    "plugin",
+    "registry",
+    "cordis"
+  ],
+  "author": "dove-a",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dove-a/dsh-plugin-registry.git"
+  },
+  "homepage": "https://github.com/dove-a/dsh-plugin-registry",
+  "bugs": {
+    "url": "https://github.com/dove-a/dsh-plugin-registry/issues"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-tools": "^0.1.0-rc.6"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

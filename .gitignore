@@ -1,0 +1,12 @@
+# 依赖
+node_modules/
+
+# 运行时数据（registry.json / reports / backups / allowlist —— 本机状态，不入库）
+data/
+
+# npm 认证配置（含令牌引用，禁止提交）
+.npmrc
+
+# 日志与系统文件
+*.log
+.DS_Store
