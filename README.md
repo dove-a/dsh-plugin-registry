@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/@a_dove/dsh-plugin-registry)](https://www.npmjs.com/package/@a_dove/dsh-plugin-registry)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-DSH（DeepSeek Harness）**插件路径注册表**：盘点 DSH 环境中所有已安装插件、预设与技能的真实路径与来源，自动发现新安装、被删除与版本变化，扫描插件文件中的 C 盘残留引用，并检查依赖完整性。提供 **Agent 自动工具**与 **Web GUI 面板**双入口。
+DSH（DeepSeek Harness）**插件路径注册表**：一个因为我自己的DSH装在D盘，而被限制诸多从而想出的企划，功能为盘点 DSH 环境中所有已安装插件、预设与技能的真实路径与来源，自动发现新安装、被删除与版本变化，扫描插件文件中的 C 盘残留引用，并检查依赖完整性。提供 **Agent 自动工具**与 **Web GUI 面板**双入口。
 
 ---
 
@@ -24,6 +24,7 @@ DSH（DeepSeek Harness）**插件路径注册表**：盘点 DSH 环境中所有�
 **适合谁用：**
 
 - **DSH Web GUI 用户**：装了多个插件后想弄清某个插件装在哪个目录、属于哪个载体、什么版本；
+- **D盘安装者用户**：将DSH与本地_npx缓存同时迁移到D盘的用户；
 - **插件作者**：自研或发布插件安装后，验证安装位置、依赖与路径残留；
 - **需要审计的环境**：追踪插件变更历史（什么时候装了什么、哪次升级改了版本）。
 
