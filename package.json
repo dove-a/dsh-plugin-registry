@@ -1,6 +1,6 @@
 {
   "name": "@a_dove/dsh-plugin-registry",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Path registry for DSH (DeepSeek Harness) plugins: inventory all installed plugins/presets/skills with real paths & sources, detect new/removed/upgraded changes, scan C-drive residue references, verify dependency integrity. Agent tools (plugin_registry_list/check/report) + Web GUI panel. Hot-pluggable via profiles cordis.patch.yml.",
   "type": "commonjs",
   "engines": {
